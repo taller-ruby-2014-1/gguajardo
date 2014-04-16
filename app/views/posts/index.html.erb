@@ -1,0 +1,41 @@
+<style>
+	#table_posts{
+		border: 1px solid;
+		margin: 0 auto;
+		border-radius: 10px;
+	}
+	#table_posts td{
+		border: 1px solid;
+	}
+
+	.posts-titulo{
+		width: auto;
+		height: 20px;
+		padding: 2px 0px 2px 5px;
+		border-radius: 5px;
+		color: white;
+		background-color: black;
+	}
+	.posts-texto{
+		width: auto;
+		padding: 2px 0px 2px 5px;
+		border-radius: 5px;
+		color: white;
+		background-color: black;
+		font-size: 12px;
+	}
+</style>
+
+<h1>Mis posts</h1>
+
+<table id="table_posts" width="100%">
+	<tr> <th width="20%">Titulo</th><th width="80%">Texto</th></tr>
+	<% @posts.each do |post| %>
+	<tr>
+		<td class="posts-titulo"><%= post.title %></td>
+		<td class="posts-texto"><%= post.text %></td>
+	<tr>
+	<% end %>
+</table>
+
+<p><%= link_to "Nuevo Post", new_post_path %></p>
