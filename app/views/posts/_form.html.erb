@@ -1,9 +1,4 @@
-<h1> Nueo Post </h1>
-
-<%= render 'form' %>
-
-<!--
-<%= form_for :post, url:posts_path do |f|%>
+<%= form_for @post do |f|%>
 	<% if @post.errors.any? %>
 	<div id="errorExplanation">
 		<h2><%= pluralize(@post.errors.count,"error") %>Prohibited this post from being saved:</h2>
@@ -27,6 +22,3 @@
 		<%= f.submit %><br>
 	</p>
 <% end %>
--->
-
-<p><%= link_to "Back", posts_path %></p>

@@ -1,9 +1,9 @@
-<h1> Nueo Post </h1>
+<h1> Nuevo/Editar Post </h1>
 
 <%= render 'form' %>
 
 <!--
-<%= form_for :post, url:posts_path do |f|%>
+<%= form_for :post, url:post_path(@post.id), method: :patch do |f|%>
 	<% if @post.errors.any? %>
 	<div id="errorExplanation">
 		<h2><%= pluralize(@post.errors.count,"error") %>Prohibited this post from being saved:</h2>

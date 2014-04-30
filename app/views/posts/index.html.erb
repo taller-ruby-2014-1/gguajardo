@@ -24,16 +24,24 @@
 		background-color: black;
 		font-size: 12px;
 	}
+
+	.posts-texto > a{
+		color:white;
+	}
+}
 </style>
 
 <h1>Mis posts</h1>
 
 <table id="table_posts" width="100%">
-	<tr> <th width="20%">Titulo</th><th width="80%">Texto</th></tr>
+	<tr> <th width="20%">Titulo</th><th width="63%">Texto</th><th width="5%"></th><th width="5%"></th><th width="7%"></th></tr>
 	<% @posts.each do |post| %>
 	<tr>
 		<td class="posts-titulo"><%= post.title %></td>
 		<td class="posts-texto"><%= post.text %></td>
+		<td class="posts-texto"><%= link_to 'Show', post_path(post) %></td>
+		<td class="posts-texto"><%= link_to 'Edit', edit_post_path(post) %></td>
+		<td class="posts-texto"><%= link_to 'Destroy', post_path(post), method: :delete, data: {confirm:'¿Estás seguro?'} %></td>
 	<tr>
 	<% end %>
 </table>
