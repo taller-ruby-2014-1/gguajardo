@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
 
+	before_filter :authenticate_user!
+
 	def index
 		@posts = Post.all
+		@last = Post.last(3)
+
 	end
 
 	def new
@@ -39,6 +43,7 @@ class PostsController < ApplicationController
 
 	def destroy
 		@post = Post.find(params[:id])
+
 		@post.destroy
 
 		redirect_to posts_path

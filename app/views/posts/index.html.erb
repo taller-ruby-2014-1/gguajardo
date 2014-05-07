@@ -42,8 +42,9 @@
 		<td class="posts-texto"><%= link_to 'Show', post_path(post) %></td>
 		<td class="posts-texto"><%= link_to 'Edit', edit_post_path(post) %></td>
 		<td class="posts-texto"><%= link_to 'Destroy', post_path(post), method: :delete, data: {confirm:'¿Estás seguro?'} %></td>
-	<tr>
+	</tr>
 	<% end %>
 </table>
 
 <p><%= link_to "Nuevo Post", new_post_path %></p>
+
